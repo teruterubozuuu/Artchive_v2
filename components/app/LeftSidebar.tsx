@@ -2,6 +2,7 @@
 import { Palette } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuItem } from "../ui/sidebar";
 import { BellIcon, BuildingStorefrontIcon, EnvelopeIcon, HomeIcon, PaintBrushIcon, TicketIcon } from "@heroicons/react/24/solid";
+import UserDropdown from "./UserDropdown";
 
 export default function LeftSidebar() {
   const sidebarMenu = [
@@ -20,16 +21,21 @@ export default function LeftSidebar() {
         </span>
       </SidebarHeader>
       <SidebarContent className="px-4 py-3">
-        <SidebarMenu className="space-y-7">
-          {sidebarMenu.map((item) => (
-            <SidebarMenuItem key={item.id} className="flex gap-3 items-center">
-              <span className="w-6 text-primary">{item.icon}</span>
-              <span className="font-medium">{item.label}</span>
+        <SidebarMenu className="flex flex-col h-full">
+          <div className="space-y-7 flex-1">
+            {sidebarMenu.map((item) => (
+              <SidebarMenuItem key={item.id} className="flex gap-3 items-center">
+                <span className="w-6 text-primary">{item.icon}</span>
+                <span className="font-medium">{item.label}</span>
+              </SidebarMenuItem>
+            ))}
+            <SidebarMenuItem className="bg-primary text-center font-semibold rounded-full py-2">
+              Post
             </SidebarMenuItem>
-          ))}
-          <SidebarMenuItem className="bg-primary text-center font-semibold rounded-full py-2">
-            Post
-          </SidebarMenuItem>
+          </div>
+          <div>
+            <UserDropdown />
+          </div>
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>

@@ -4,6 +4,7 @@ import LeftSidebar from "@/components/app/LeftSidebar"
 import SearchBar from "@/components/app/SearchBar"
 import TopMenuBar from "@/components/app/TopMenuBar"
 import TopRightPanel from "@/components/app/TopRightPanel"
+import UserDropdown from "@/components/app/UserDropdown"
 
 export default function MainAppLayout({ children }: { children: React.ReactNode }) {
   return (
